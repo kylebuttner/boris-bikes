@@ -18,7 +18,7 @@ it 'fixes all the bikes' do
   20.times { bikes << Bike.new }
   bikes.each{|bike| bike.working = false }
   bikes.each {|bike| subject.accept(bike)}
-  #subject.fix!
+  subject.fix!
   expect(subject.bikes).to all (be_working)
 
 
