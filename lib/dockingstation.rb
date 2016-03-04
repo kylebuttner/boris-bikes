@@ -1,14 +1,17 @@
 #require_relative 'bike.rb'
+require_relative 'bike_container'
 
 class DockingStation
-  DEFAULT_CAPACITY = 20
-	attr_reader :capacity
 
-	def initialize(capacity = DEFAULT_CAPACITY)
-		@bikes = []
-		@capacity = capacity
+	  include BikeContainer
 
-	end
+	  DEFAULT_CAPACITY = 20
+
+	  attr_reader :bikes, :capacity
+
+	  def initialize(capacity=DEFAULT_CAPACITY)
+	    set_up_container(capacity)
+	  end
 
 	def dock(bike)
 		fail "Station is full" if full?

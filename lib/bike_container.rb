@@ -1,10 +1,13 @@
-class Garage
+module BikeContainer
 
-  attr_reader :bikes
-
-  def initialize
+  def set_up_container(capacity)
     @bikes = []
+    @capacity = capacity
   end
+
+  #  def remove_bikes(bike)
+  #    self.bikes.delete(bike)
+  #  end
 
   def load(location, broken)
       location.bikes.each do |bike|
@@ -17,5 +20,5 @@ class Garage
         end
       end
     end
-    
+
 end
