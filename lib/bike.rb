@@ -4,7 +4,7 @@ class Bike
 		@status = true
 	end
 
-	def working?
+	def working
 		@status
 	end
 

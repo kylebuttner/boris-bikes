@@ -4,14 +4,27 @@ require './lib/garage.rb'
 require './lib/bike.rb'
 
 # # setup
-# van = Van.new
-# garage = Garage.new
-# station = DockingStation.new
-# bikes = []
+van = Van.new
+garage = Garage.new
+station = DockingStation.new
+bikes = []
+
+# create some working bikes
+10.times { bikes << Bike.new }
+
+bikes[1].working = false
+
+bikes.each do |bike|
+  station.dock(bike)
+end
+
+p station.bikes
+
+van.load(station, true)
+
+p van
 #
-# # create some working bikes
-# 20.times { bikes << Bike.new }
-#
+# p van
 # # garage accepts bikes
 # bikes.each {|bike| garage.accept(bike)}
 #

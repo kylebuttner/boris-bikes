@@ -15,7 +15,7 @@ class DockingStation
 
 	def dock(bike)
 		fail "Station is full" if full?
-		if bike.working?
+		if bike.working
 			bikes << bike
 		else
 			bikes.reverse!
@@ -26,8 +26,8 @@ class DockingStation
 
 	def release_bike
 		fail "No bikes available" if empty?
-		fail "Bike is broken" if !bikes.last.working?
-		# bikes.sort{|x,y| x.working? <=> y.working?}
+		fail "Bike is broken" if !bikes.last.working
+		# bikes.sort{|x,y| x.working? <=> y.working}
 		bikes.pop
 	end
 
